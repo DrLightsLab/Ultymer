@@ -1,4 +1,14 @@
 {
-    "name" : "Ultymer",
-    "version" : "0.0.1"
+  "name": "Ultymer",
+  "version": "0.0.1",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "vue": "^2.3.3"
+  }
 }
