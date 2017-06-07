@@ -6,19 +6,19 @@ const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 
 var paths = {
-    scripts : ['.app/ultymer/js/*.js'],
-    css : ['.app/ultymer/scss/*.scss'],
-    image : ['./app/ultymer/img/*.img']
+    scripts : ['./src/ultymer/js/*.js'],
+    css : ['./src/ultymer/scss/*.scss'],
+    image : ['./src/ultymer/img/*.img']
 }
 
 gulp.task('lint', () =>{
-    gulp.src('app/**/*.js')
+    gulp.src('src/**/*.js')
         .pipe(eslint())
         .pipe(eslint.format('table'));
 });
 
 gulp.task('default', () => {
-    gulp.watch('app/**/*.js', ['lint']);
+    gulp.watch('src/**/*.js', ['lint']);
     return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
     .pipe(babel({
@@ -26,5 +26,5 @@ gulp.task('default', () => {
     }))
     .pipe(concat('all.js'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./src/js/'));
+    .pipe(gulp.dest('./app/js/'));
 });
