@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "del": "^2.2.2",
+    "eslint": "^3.19.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
