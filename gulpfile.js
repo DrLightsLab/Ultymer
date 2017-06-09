@@ -13,7 +13,7 @@ var paths = {
 }
 
 gulp.task('lint', () => {
-    gulp.src('src/**/*.js')
+    gulp.src('app/**/*.js')
         .pipe(eslint())
         .pipe(eslint.format('table'));
 });
@@ -24,11 +24,11 @@ gulp.task('build', () => {
 
 gulp.task('default', () => {
     gulp.start('build');
-    gulp.watch('src/**/*.js', ['lint']);
+    gulp.watch('app/**/*.js', ['lint']);
     return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(concat('ultymer.js'))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./app/ultyer/js/'));
+    .pipe(gulp.dest('./app/ultymer/js/'));
 });
