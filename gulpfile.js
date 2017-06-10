@@ -24,7 +24,7 @@ gulp.task('build', () => {
 
 gulp.task('default', () => {
     gulp.start('build');
-    gulp.watch('app/**/*.js', ['lint']);
+    gulp.watch('src/**/*.js', ['lint']);
     return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
     .pipe(babel())
