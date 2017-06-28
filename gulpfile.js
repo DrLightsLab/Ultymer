@@ -13,7 +13,7 @@ var paths = {
 }
 
 gulp.task('lint', () => {
-    gulp.src('app/**/*.js')
+    gulp.src('src/**/*.js')
         .pipe(eslint())
         .pipe(eslint.format('table'));
 });
@@ -23,8 +23,8 @@ gulp.task('build', () => {
 });
 
 gulp.task('default', () => {
+    gulp.watch('./src/**/*.js', ['lint']);
     gulp.start('build');
-    gulp.watch('src/**/*.js', ['lint']);
     return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
     .pipe(babel())

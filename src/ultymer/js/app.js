@@ -4,9 +4,14 @@ const fs = require('fs');
 let timer = fs.readFileSync('./app/ultymer/html/timer.html');
 console.log(timer);
 
+Vue.component('player', {
+    props: ['timer'],
+    template: timer
+})
+
 let app = new Vue({
     el: '#timer',
-    components : {
-        'timer': timer
+    data: {
+
     }
 })
